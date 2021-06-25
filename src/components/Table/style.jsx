@@ -13,7 +13,7 @@ const TableContainer = styled.table`
       th {
         width: 16.6%;
         text-align: center;
-        background: ${({ theme }) => theme.table.thead};
+        background: ${({ theme }) => theme.thead};
       }
     }
   }
@@ -26,9 +26,9 @@ const TableContainer = styled.table`
       }
       td {
         width: 16.6%;
-        background: ${({ theme }) => theme.table.tbody};
+        background: ${({ theme }) => theme.tbody};
         text-align: center;
-        border-bottom: 1px solid ${({ theme }) => theme.table.borderBottom};
+        border-bottom: 1px solid ${({ theme }) => theme.borderBottomTable};
       }
     }
   }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CovidApiService from "../../services/covidApi";
 import { Container, SubContainer } from "./style";
 import DataGraphic from "../DataGraphic";
-import { ButtonGroup, ToggleButton } from 'react-bootstrap';
+import { ButtonGroup, ToggleButton } from "react-bootstrap";
 
 export default function CountryInfo(props) {
   const { data } = props;
@@ -34,7 +34,7 @@ export default function CountryInfo(props) {
   };
 
   const getHistoryCountry = async () => {
-    const body = {country: data.country, status: "deaths"}
+    const body = { country: data.country, status: "deaths" };
     await CovidApiService.getHistory(body).then((res) => {
       if (res.status) {
         setHistoryCountry(res.data);
@@ -59,7 +59,7 @@ export default function CountryInfo(props) {
           vaccinesInfo.administered,
           vaccinesInfo.people_vaccinated,
           vaccinesInfo.people_partially_vaccinated,
-          0
+          0,
         ]);
         break;
       default:
@@ -89,32 +89,38 @@ export default function CountryInfo(props) {
           Casos cada 100.000 habitantes: {Math.floor(data.confirmed / 100000)}
         </SubContainer>
         <SubContainer className="dataContainer">
-        <a href={`https://www.google.com/maps/dir/?api=1&origin=${data.country}`} target="_blank">Ver en ubicación en Google Maps</a>
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&origin=${data.country}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ver en ubicación en Google Maps
+          </a>
         </SubContainer>
       </SubContainer>
-      <div class="form-check">
+      <div className="form-check">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="radio"
           name="flexRadioDefault"
           id="flexRadioDefault1"
           onClick={() => changeGraphic("cases")}
           checked={graphicSelected === "cases"}
         />
-        <label class="form-check-label" for="flexRadioDefault1">
+        <label className="form-check-label" for="flexRadioDefault1">
           Casos
         </label>
       </div>
-      <div class="form-check">
+      <div className="form-check">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="radio"
           name="flexRadioDefault"
           id="flexRadioDefault2"
           onClick={() => changeGraphic("vaccines")}
           checked={graphicSelected === "vaccines"}
         />
-        <label class="form-check-label" for="flexRadioDefault2">
+        <label className="form-check-label" for="flexRadioDefault2">
           Vacunas
         </label>
       </div>

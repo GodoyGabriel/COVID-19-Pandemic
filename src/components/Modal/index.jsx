@@ -1,5 +1,5 @@
 import React from "react";
-import { ModalContainer} from "./style";
+import { ModalContainer } from "./style";
 import Modal from "react-bootstrap/Modal";
 import { ImCross } from "react-icons/im";
 
@@ -15,7 +15,7 @@ export default function ModalComponent(props) {
   return (
     <ModalContainer show={show} onHide={closeModal} animation={true}>
       <Modal.Header>
-          <ImCross onClick={closeModal} />
+        <ImCross onClick={closeModal} />
       </Modal.Header>
       <Modal.Body>{children}</Modal.Body>
     </ModalContainer>

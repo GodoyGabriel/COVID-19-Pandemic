@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { TableContainer, SubContainer, Button, Paragraph } from "./style";
 import CovidApiService from "../../services/covidApi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import ModalComponent from '../Modal';
+import ModalComponent from "../Modal";
 import CountryInfo from "../CountryInfo";
 
 export default function Table() {
@@ -29,9 +29,9 @@ export default function Table() {
 
   const handleClose = () => setShow(false);
   const handleShow = (data) => {
-    setSelectedCountry(data)
+    setSelectedCountry(data);
     setShow(true);
-  }
+  };
 
   const getCases = async () => {
     await CovidApiService.getCases().then((res) => {
@@ -71,57 +71,61 @@ export default function Table() {
       .map(([key, value]) => {
         const countryData = value.All;
         return (
-            <tr key={key} onClick={() => handleShow(countryData)}>
-              <td>{getValue(countryData.abbreviation)}</td>
-              <td>{getValue(key)}</td>
-              <td>{getValue(countryData.continent)}</td>
-              <td>{getValue(countryData.confirmed)}</td>
-              <td>{getValue(countryData.recovered)}</td>
-              <td>{getValue(countryData.deaths)}</td>
-            </tr>
+          <tr key={key} onClick={() => handleShow(countryData)}>
+            <td>{getValue(countryData.abbreviation)}</td>
+            <td>{getValue(key)}</td>
+            <td>{getValue(countryData.continent)}</td>
+            <td>{getValue(countryData.confirmed)}</td>
+            <td>{getValue(countryData.recovered)}</td>
+            <td>{getValue(countryData.deaths)}</td>
+          </tr>
         );
       });
   };
 
   const getValue = (value) => {
-    if(value){
+    if (value) {
       return value;
     } else {
-      return '-';
+      return "-";
     }
-  }
+  };
 
   return (
     <>
-    <TableContainer class="demo">
-      <thead>
-        <tr>{getHeaders()}</tr>
-      </thead>
-      <tbody>
-        {getDataForCountry()}
-        <tr>
-          <td colspan="6">
-            <SubContainer>
-              <Paragraph>
-                Pagina: {page}/{countPages}
-              </Paragraph>
-              {previous > 0 && (
-                <Button onClick={changePreviousPage}>
-                  <IoIosArrowBack />
-                </Button>
-              )}
-              {page < countPages && (
-                <Button onClick={changeNextPage}>
-                  <IoIosArrowForward />
-                </Button>
-              )}
-            </SubContainer>
-          </td>
-        </tr>
-      </tbody>
-    </TableContainer>
-    <ModalComponent title="COVID 19 en:" handleClose={handleClose} show={show}>
-      <CountryInfo data={selectedCountry}/>
+      <TableContainer className="demo">
+        <thead>
+          <tr>{getHeaders()}</tr>
+        </thead>
+        <tbody>
+          {getDataForCountry()}
+          <tr>
+            <td colSpan="6">
+              <SubContainer>
+                <Paragraph>
+                  Pagina: {page}/{countPages}
+                </Paragraph>
+                {previous > 0 && (
+                  <Button onClick={changePreviousPage}>
+                    <IoIosArrowBack />
+                  </Button>
+                )}
+                {page < countPages && (
+                  <Button onClick={changeNextPage}>
+                    <IoIosArrowForward />
+                  </Button>
+                )}
+              </SubContainer>
+            </td>
+          </tr>
+        </tbody>
+      </TableContainer>
+      <ModalComponent
+        title="COVID 19 en:"
+        handleClose={handleClose}
+        show={show}
+      >
+        <CountryInfo data={selectedCountry} />
       </ModalComponent>
     </>
   );

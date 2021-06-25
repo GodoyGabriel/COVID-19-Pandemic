@@ -107,15 +107,18 @@ const stylesThemes = {
   secondary: "#E4E8EE",
   textColor: "#E4E8EE",
   filterColor: "#E4E8EE",
-  table: {
-    thead: "#2d2c2c",
-    tbody: "#2d2c2c67",
-    borderBottom: "#757678",
-  },
+  thead: "#2d2c2c",
+  tbody: "#2d2c2c67",
+  borderBottomTable: "#757678",
   navBar: {
     primary: "#100217E6",
     secondary: "#FAFAFA",
   },
+/*   table: {
+    thead: "#2d2c2c",
+    tbody: "#2d2c2c67",
+    borderBottom: "#757678",
+  }, */
 };
 
 const TotalContainer = styled.div`

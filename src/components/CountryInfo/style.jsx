@@ -15,22 +15,22 @@ const SubContainer = styled.div`
   height: 100%;
   width: 100%;
   align-items: center;
-  &.contentContainer{
+  &.contentContainer {
     /* flex-flow: row wrap; */
     flex-flow: row;
-    align-items: flex-start ;
+    align-items: flex-start;
   }
-  &.imageContainer{
+  &.imageContainer {
     width: 35%;
-    img{
+    img {
       width: 200px;
       height: auto;
     }
   }
-  &.dataContainer{
+  &.dataContainer {
     width: 50%;
   }
-  &.graphicContainer{
+  &.graphicContainer {
     height: 50%;
     width: 50%;
   }
@@ -54,4 +54,4 @@ const Button = styled.button`
   }
 `;
 
-export { Container, SubContainer, Button};
+export { Container, SubContainer, Button };
