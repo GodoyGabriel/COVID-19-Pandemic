@@ -31,11 +31,13 @@ width: 100%;
 }
 
 .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   width: 100%;
-  height: 100%;
-  max-height: 35%;
+  height: 10px;
+  max-height: 5%;
   border-bottom: none;
-  padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
   @media (max-width: 600px) {
@@ -75,7 +77,11 @@ const Container = styled.div`
   min-width: 100%;
   height: 100%;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  svg{
+      opacity: 0.5;
+      cursor: pointer;
+    }
 `;
 
 const SubContainer = styled.div`
@@ -83,26 +89,6 @@ const SubContainer = styled.div`
   height: 100%;
   width: 100%;
   align-items: center;
-  &.imageContainer{
-    width: 35%;
-    img{
-      width: 200px;
-      height: auto;
-    }
-  }
-  &.dataContainer{
-    width: 50%;
-    justify-content: flex-start;
-  }
-  &.crossContainer{
-    width: auto;
-    justify-content: flex-start;
-    align-items: flex-start;
-    svg{
-      opacity: 0.5;
-      cursor: pointer;
-    }
-  }
 `;
 const Button = styled.button`
   border: none;

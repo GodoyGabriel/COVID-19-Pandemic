@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { TableContainer, SubContainer, Button, Paragraph } from "./style";
-import CovidApi from "../../services/covidApi";
+import CovidApiService from "../../services/covidApi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import ModalCountry from '../Modal';
+import ModalComponent from '../Modal';
+import CountryInfo from "../CountryInfo";
 
 export default function Table() {
+  const countRows = 10;
   const [countries, setCountries] = useState({});
   const [previous, setPrevious] = useState(0);
-  const [countRows, setCountRows] = useState(10);
   const [next, setNext] = useState(countRows);
   const [page, setPage] = useState(1);
   const [countPages, setCountPages] = useState(0);
@@ -33,7 +34,7 @@ export default function Table() {
   }
 
   const getCases = async () => {
-    await CovidApi.getCases().then((res) => {
+    await CovidApiService.getCases().then((res) => {
       if (res.status) {
         setCountries(res.data);
         const getCountPages = Math.floor(
@@ -119,7 +120,9 @@ export default function Table() {
         </tr>
       </tbody>
     </TableContainer>
-    <ModalCountry data={selectedCountry} handleClose={handleClose} show={show}/>
+    <ModalComponent title="COVID 19 en:" handleClose={handleClose} show={show}>
+      <CountryInfo data={selectedCountry}/>
+      </ModalComponent>
     </>
   );
 }
