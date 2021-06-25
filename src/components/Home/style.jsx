@@ -7,6 +7,8 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 `;
 const SubContainer = styled.div`
   display: flex;
@@ -18,7 +20,9 @@ const SubContainer = styled.div`
 const Title = styled.h1`
   color: ${({ theme }) => theme.textColor};
   font-weight: 900;
+  font-size: 4rem;
   text-transform: uppercase;
+  margin-bottom: 2rem;
 `;
 
 const Paragraph = styled.p``;

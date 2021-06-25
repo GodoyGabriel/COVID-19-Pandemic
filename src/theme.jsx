@@ -110,6 +110,8 @@ const stylesThemes = {
   thead: "#2d2c2c",
   tbody: "#2d2c2c67",
   borderBottomTable: "#757678",
+  backgroundButton: "#414c50",
+  backgroundActiveButton: "#0784b5",
   navBar: {
     primary: "#100217E6",
     secondary: "#FAFAFA",

@@ -16,8 +16,8 @@ const ModalContainer = styled(Modal)`
   }
   .modal-content {
     width: 580px;
-    height: 600px;
-    background: white;
+    height: 700px;
+    background: whitesmoke;
     @media (max-width: 600px) {
       width: 100vh;
       height: 100vh;
