@@ -50,6 +50,9 @@ const ModalContainer = styled(Modal)`
       justify-content: space-between;
       align-items: flex-start;
     }
+    svg {
+      cursor: pointer;
+    }
   }
 
   .close {
@@ -62,6 +65,12 @@ const ModalContainer = styled(Modal)`
       height: auto;
       max-height: 400px;
       overflow-y: scroll;
+    }
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
     }
   }
 

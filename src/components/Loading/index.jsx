@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Loading() {
   return (
-    <div>
+    <div className="loading">
       <svg
         width="57"
         height="57"
